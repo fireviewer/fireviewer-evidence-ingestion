@@ -23,7 +23,7 @@ Source correspondence and hashes are recorded in the migration dossier. Existing
 
 ## Delivery boundary
 
-Docker, image ownership, registries and production deployment are deferred by the project owner. CPU/schema tests do not qualify GPU, visual or scientific performance.
+Docker was deferred during the initial source delivery. The resumed private container phase, pinned images and acceptance limits are documented in [fireviewer-docker](https://github.com/fireviewer/fireviewer-docker). Production deployment remains separate. CPU/schema tests do not qualify GPU, visual or scientific performance.
 
 ## Sources et commandes propres au composant
 
