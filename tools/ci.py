@@ -134,12 +134,12 @@ def verify() -> None:
     else:
         raise SystemExit("Unknown verification kind")
     artifacts = [{"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-                  "bytes": path.stat().st_size} for path in sorted(dist.iterdir()) if path.is_file()]
+                  "bytes": path.stat().st_size} for path in sorted(dist.iterdir()) if path.is_file() and not path.name.startswith(".")]
     manifest = {"version": version, "commit": subprocess.check_output(["git", "rev-parse", "HEAD"]).decode().strip(),
                 "kind": kind, "artifacts": artifacts, "validation": "installed-artifact-tests-passed",
                 "limits": CONFIG.get("limits", [])}
     (dist / "release-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    (dist / "RELEASE.md").write_text(f"Version {version}. Installation isolée et contrôles automatisés réussis.\n\n" +
+    (dist / "RELEASE.md").write_text(f"Version {version}. Installation isolÃ©e et contrÃ´les automatisÃ©s rÃ©ussis.\n\n" +
                                     "\n".join(CONFIG.get("limits", [])) + "\n", encoding="utf-8")
 
 
@@ -157,7 +157,7 @@ def release() -> None:
     # No --clobber: an accepted version is never replaced by a repeated run.
     run("gh", "release", "create", tag, "--verify-tag", "--title", tag,
         "--notes-file", str(ROOT / "dist/RELEASE.md"),
-        *[str(p) for p in (ROOT / "dist").iterdir() if p.is_file()])
+        *[str(p) for p in (ROOT / "dist").iterdir() if p.is_file() and not p.name.startswith(".")])
 
 
 if __name__ == "__main__":
