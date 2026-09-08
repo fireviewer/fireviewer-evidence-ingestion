@@ -86,8 +86,9 @@ def verify() -> None:
         requirements.write_text(filtered)
         run("uv", "venv", str(test_env), "--python", sys.executable)
         run("uv", "pip", "sync", "--python", python_at(test_env), "--require-hashes",
-            "--find-links", str(dependencies), "--extra-index-url", "https://download.pytorch.org/whl/cpu",
-            "--index-strategy", "unsafe-best-match", str(requirements))
+            "--find-links", str(dependencies),
+            "--find-links", "https://download.pytorch.org/whl/cpu/torch/",
+            "--find-links", "https://download.pytorch.org/whl/cpu/torchvision/", str(requirements))
         wheels = list(dist.glob("*.whl"))
         if len(wheels) != 1:
             raise SystemExit("Expected one freshly built component wheel")
@@ -97,6 +98,8 @@ def verify() -> None:
         run(python_at(test_env), "-I", "-m", "pytest", "-o", "pythonpath=",
             "--junitxml=" + str(reports / "pytest.xml"), "-q", *CONFIG["tests"])
         if CONFIG.get("migrations"):
+            run(python_at(test_env), "-I", "-m", "ruff", "check", "src", "tests", "migrations")
+            run(python_at(test_env), "-I", "-m", "mypy")
             run(python_at(test_env), "-I", "-m", "alembic", "upgrade", "head", "--sql")
         if CONFIG.get("typescript_package"):
             npm("pack", "--pack-destination", str(dist))

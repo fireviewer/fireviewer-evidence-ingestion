@@ -1,6 +1,6 @@
 {
   "kind": "python",
-  "requirements": "requirements.tests.lock.txt",
+  "requirements": "requirements.ci.lock.txt",
   "dependencies": [
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
