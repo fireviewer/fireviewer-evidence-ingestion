@@ -1,0 +1,13 @@
+{
+  "schema": "fireviewer.component.v1",
+  "name": "fireviewer-evidence-ingestion",
+  "version": "0.1.0",
+  "python_package": "fireviewer_evidence_ingestion",
+  "target_account": "fireviewer",
+  "visibility": "private",
+  "target_owner": "Association FIRE-VIEWER",
+  "legal_transfer": "not_executed",
+  "license": "AGPL-3.0-or-later",
+  "docker": "deferred-by-owner",
+  "source_baseline": "20260908"
+}

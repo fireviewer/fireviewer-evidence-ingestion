@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use the FireViewer AI Worker in research, please cite FireViewer and the specific models or datasets used by your experiment."
+title: "FireViewer AI Worker"
+type: software
+authors:
+  - name: "Unicorn Who Dev"
+    email: "unicornwhodev@gmail.com"
+repository-code: "https://github.com/fireviewer/fireviewer-ai-worker"
+url: "https://github.com/fireviewer/fireviewer-ai-worker"
+abstract: >-
+  FireViewer AI Worker provides provenance-aware wildfire evidence acquisition,
+  visual and satellite processing, deterministic geographic hypotheses,
+  spatio-temporal evidence assembly and structured multimodal assessment for the
+  FireViewer research pipeline.
+keywords:
+  - wildfire
+  - computer vision
+  - remote sensing
+  - geospatial
+  - provenance
+  - multimodal
+  - evidence
+  - reproducibility

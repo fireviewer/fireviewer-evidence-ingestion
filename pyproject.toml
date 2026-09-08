@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fireviewer-evidence-ingestion"
+version = "0.1.0"
+description = "Acquisition and normalization of sources, media and satellite observations."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "AGPL-3.0-or-later"
+dependencies = [
+  "fireviewer-contracts==0.1.0",
+  "fireviewer-vision-runtime==0.1.0",
+  "httpx==0.28.1",
+  "boto3==1.43.50",
+  "numpy==2.4.6",
+  "Pillow==12.3.0",
+  "rasterio==1.4.4",
+  "defusedxml==0.7.1",
+  "h5py==3.15.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.0.3", "ruff==0.15.21", "jsonschema==4.26.0"]
+"source-acquisition" = [
+  "awscrt==0.32.2",
+  "boto3==1.43.50",
+  "httpx==0.28.1",
+  "pillow==12.3.0"
+]
+"public-media" = [
+  "boto3==1.43.50",
+  "httpx==0.28.1",
+  "opencv-python-headless==4.13.0.92",
+  "pillow==12.3.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.yaml", "*.yml", "*.txt", "*.md", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers"
+
+[project.scripts]
+fireviewer-ingestion = "fireviewer_evidence_ingestion.mvp.research.source_acquisition_service:main"
