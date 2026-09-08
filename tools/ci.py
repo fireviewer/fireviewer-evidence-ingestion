@@ -105,6 +105,7 @@ def verify() -> None:
             npm("pack", "--pack-destination", str(dist))
         if CONFIG.get("producer_ui"):
             npm("ci", "--ignore-scripts")
+            run("node", "--test", "tools/test-geometry-comparison.mjs")
             npm("ci", "--ignore-scripts", cwd=ROOT / "packages/ui")
             npm("ci", "--ignore-scripts", cwd=ROOT / "apps/web")
             npm("test", cwd=ROOT / "packages/ui")
