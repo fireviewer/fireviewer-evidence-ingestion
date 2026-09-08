@@ -1,0 +1,39 @@
+{
+  "kind": "python",
+  "requirements": "requirements.tests.lock.txt",
+  "dependencies": [
+    {
+      "repository": "fireviewer/fireviewer-evidence-ingestion",
+      "release": "ci-dependencies-7c923c240470",
+      "asset": "fireviewer_contracts-0.1.0-py3-none-any.whl",
+      "sha256": "62f12d2b4b4cfee1abadf2aaf60aa2c408903a0151ed964c9a43ba579caa301f",
+      "upstream_repository": "fireviewer/fireviewer-contracts",
+      "attribution": "Original licence and author notices inside artifact"
+    },
+    {
+      "repository": "fireviewer/fireviewer-evidence-ingestion",
+      "release": "ci-dependencies-7c923c240470",
+      "asset": "fireviewer_geolocation-0.1.0-py3-none-any.whl",
+      "sha256": "65eed97c6215aaeb6875c34ffc1f1e575cdf13383d0b96d5fb2402d6f052bb24",
+      "upstream_repository": "fireviewer/fireviewer-geolocation",
+      "attribution": "Original licence and author notices inside artifact"
+    },
+    {
+      "repository": "fireviewer/fireviewer-evidence-ingestion",
+      "release": "ci-dependencies-7c923c240470",
+      "asset": "fireviewer_vision_runtime-0.1.0-py3-none-any.whl",
+      "sha256": "c0b485676ad1720879f87e44da8b7a14af6f252f925f54f0a325396944c6089f",
+      "upstream_repository": "fireviewer/fireviewer-vision-runtime",
+      "attribution": "Original licence and author notices inside artifact"
+    }
+  ],
+  "tests": [
+    "tests"
+  ],
+  "migrations": false,
+  "typescript_package": false,
+  "producer_ui": false,
+  "limits": [
+    "CPU/offline code qualification only; no models, GPU, deployed services or native Unreal qualification."
+  ]
+}
