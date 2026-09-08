@@ -22,3 +22,11 @@ datasets/
 **/checkpoints/
 **/weights/
 **/huggingface-cache/
+
+.ci/
+
+ci-results/
+
+playwright-report/
+
+test-results/
