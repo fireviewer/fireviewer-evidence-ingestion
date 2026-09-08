@@ -4,25 +4,25 @@
   "dependencies": [
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-7c923c240470",
-      "asset": "fireviewer_contracts-0.1.0-py3-none-any.whl",
-      "sha256": "62f12d2b4b4cfee1abadf2aaf60aa2c408903a0151ed964c9a43ba579caa301f",
+      "release": "ci-dependencies-final-de937f55844d",
+      "asset": "fireviewer_contracts-0.1.1-py3-none-any.whl",
+      "sha256": "6e50fa64c1f062dfc256c88f1c8c1b2307e0960ebbed1d47a5755708087ccb51",
       "upstream_repository": "fireviewer/fireviewer-contracts",
       "attribution": "Original licence and author notices inside artifact"
     },
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-7c923c240470",
-      "asset": "fireviewer_geolocation-0.1.0-py3-none-any.whl",
-      "sha256": "65eed97c6215aaeb6875c34ffc1f1e575cdf13383d0b96d5fb2402d6f052bb24",
+      "release": "ci-dependencies-final-de937f55844d",
+      "asset": "fireviewer_geolocation-0.1.1-py3-none-any.whl",
+      "sha256": "2a6a4661207f8e06472df32f2659693f0abf28ce756f7955b9804bd8731d1362",
       "upstream_repository": "fireviewer/fireviewer-geolocation",
       "attribution": "Original licence and author notices inside artifact"
     },
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-7c923c240470",
-      "asset": "fireviewer_vision_runtime-0.1.0-py3-none-any.whl",
-      "sha256": "c0b485676ad1720879f87e44da8b7a14af6f252f925f54f0a325396944c6089f",
+      "release": "ci-dependencies-final-de937f55844d",
+      "asset": "fireviewer_vision_runtime-0.1.1-py3-none-any.whl",
+      "sha256": "8191b10ad17450edb5a06e215d8717fd2da83f8ca51de028b255142b0522e158",
       "upstream_repository": "fireviewer/fireviewer-vision-runtime",
       "attribution": "Original licence and author notices inside artifact"
     }
