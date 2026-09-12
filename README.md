@@ -1,15 +1,17 @@
 # fireviewer-evidence-ingestion
 
+> **Source active FV · private.** Sources, médias, transcription et acquisition/normalisation satellite. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
+
 Acquisition and normalization of sources, media and satellite observations.
 
-Python package: `fireviewer_evidence_ingestion`. Version: `0.1.0`.
+Python package: `fireviewer_evidence_ingestion`. Version: `0.1.1`.
 
 ## Installation
 
 Install the versioned release wheels (including private FireViewer dependencies) from the release bundle. No sibling source checkout is required.
 
 ```sh
-python -m pip install --find-links /path/to/release/wheels fireviewer-evidence-ingestion==0.1.0
+python -m pip install --find-links /path/to/release/wheels fireviewer-evidence-ingestion==0.1.1
 python -m pytest tests -q
 ```
 
