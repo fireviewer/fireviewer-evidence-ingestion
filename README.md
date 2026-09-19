@@ -1,5 +1,17 @@
 # fireviewer-evidence-ingestion
 
+## Repères documentaires — 19 septembre 2026
+
+- **Rôle :** Acquisition et normalisation bornées des sources, médias, transcription et observations satellite.
+- **Statut :** Actif — package v0.1.1.
+- **Entrées :** Sources autorisées/officielles/publiques et credentials fournisseurs configurés explicitement.
+- **Sorties :** Évidences normalisées et métadonnées de provenance exploitables par le backend/pipeline.
+- **Limites :** Ne pas aspirer sans limite ni transformer le dépôt en archive brute de médias. Droits, hash, temps et résultat d’acquisition doivent rester traçables.
+
+[Fiche du dépôt](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/repositories/fireviewer-evidence-ingestion.md) · [Architecture](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/ARCHITECTURE.md) · [Statuts et vocabulaire](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/STATUTS_ET_VOCABULAIRE.md).
+
+Cette revue documentaire ne renouvelle aucun test ni aucune réception. Les procédures, versions et preuves techniques ci-dessous conservent leur périmètre et leur date.
+
 > **Source active FV · private.** Sources, médias, transcription et acquisition/normalisation satellite. Voir [où travailler, quoi commiter et comment reprendre](ORGANISATION.md).
 
 Acquisition and normalization of sources, media and satellite observations.
