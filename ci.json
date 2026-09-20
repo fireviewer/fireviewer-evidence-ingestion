@@ -8,7 +8,11 @@
       "asset": "fireviewer_contracts-0.1.1-py3-none-any.whl",
       "sha256": "6e50fa64c1f062dfc256c88f1c8c1b2307e0960ebbed1d47a5755708087ccb51",
       "upstream_repository": "fireviewer/fireviewer-contracts",
-      "attribution": "Original licence and author notices inside artifact"
+      "attribution": "Original licence and author notices inside artifact",
+      "source_commit": "d2be4ba408812286a30c9c6207d29ef00bd25ced",
+      "source_asset": "fireviewer_contracts-0.1.2-py3-none-any.whl",
+      "previous_requirement": "fireviewer-contracts==0.1.1",
+      "source_requirement": "fireviewer-contracts==0.1.2"
     },
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
@@ -16,7 +20,11 @@
       "asset": "fireviewer_geolocation-0.1.1-py3-none-any.whl",
       "sha256": "2a6a4661207f8e06472df32f2659693f0abf28ce756f7955b9804bd8731d1362",
       "upstream_repository": "fireviewer/fireviewer-geolocation",
-      "attribution": "Original licence and author notices inside artifact"
+      "attribution": "Original licence and author notices inside artifact",
+      "source_commit": "fa4b5294ca60cd42039f3eff9c364b01f16cf2ae",
+      "source_asset": "fireviewer_geolocation-0.1.1-py3-none-any.whl",
+      "previous_requirement": "fireviewer-geolocation==0.1.1",
+      "source_requirement": "fireviewer-geolocation==0.1.1"
     },
     {
       "repository": "fireviewer/fireviewer-evidence-ingestion",
@@ -24,7 +32,11 @@
       "asset": "fireviewer_vision_runtime-0.1.1-py3-none-any.whl",
       "sha256": "8191b10ad17450edb5a06e215d8717fd2da83f8ca51de028b255142b0522e158",
       "upstream_repository": "fireviewer/fireviewer-vision-runtime",
-      "attribution": "Original licence and author notices inside artifact"
+      "attribution": "Original licence and author notices inside artifact",
+      "source_commit": "9238c4cd9dd57e2addacb12b582ae10194887e59",
+      "source_asset": "fireviewer_vision_runtime-0.1.1-py3-none-any.whl",
+      "previous_requirement": "fireviewer-vision-runtime==0.1.1",
+      "source_requirement": "fireviewer-vision-runtime==0.1.1"
     }
   ],
   "tests": [

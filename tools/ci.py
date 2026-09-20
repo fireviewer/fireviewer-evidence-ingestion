@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import sys
 import tomllib
+import tarfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,13 +35,44 @@ def private_dependencies() -> Path:
     cache = CACHE / "wheels"
     cache.mkdir(parents=True, exist_ok=True)
     for entry in CONFIG["dependencies"]:
-        target = cache / entry["asset"]
+        target = cache / entry.get("source_asset", entry["asset"])
+        if entry.get("source_commit"):
+            commit = entry["source_commit"]
+            if re.fullmatch(r"[0-9a-f]{40}", commit) is None:
+                raise SystemExit("Source dependency requires an immutable commit")
+            source = CACHE / ("source-" + commit)
+            source.mkdir(exist_ok=True)
+            archive = source / "source.tar.gz"
+            with archive.open("wb") as stream:
+                subprocess.run(["gh", "api", "repos/" + entry["upstream_repository"] +
+                                "/tarball/" + commit], stdout=stream, check=True)
+            with tarfile.open(archive) as bundle:
+                bundle.extractall(source, filter="data")
+            folders = [folder for folder in source.iterdir() if folder.is_dir()]
+            if len(folders) != 1:
+                raise SystemExit("Unexpected source archive layout")
+            run("uv", "build", "--wheel", "--out-dir", str(cache),
+                "--python", sys.executable, str(folders[0]))
+            # The immutable source commit is the input lock. Record the wheel hash
+            # produced by this build and use it in the isolated test install.
+            entry["built_sha256"] = hashlib.sha256(target.read_bytes()).hexdigest()
+            continue
         if not target.exists():
             run("gh", "release", "download", entry["release"], "--repo", entry["repository"],
                 "--pattern", entry["asset"], "--dir", str(cache))
         if hashlib.sha256(target.read_bytes()).hexdigest() != entry["sha256"]:
             raise SystemExit("Release dependency hash mismatch: " + entry["asset"])
     return cache
+
+
+def effective_requirements(source: str) -> str:
+    """Use hashes and versions of wheels built from immutable source dependencies."""
+    for entry in CONFIG["dependencies"]:
+        if entry.get("source_commit"):
+            source = source.replace(entry["sha256"], entry["built_sha256"])
+            if entry.get("source_requirement"):
+                source = source.replace(entry["previous_requirement"], entry["source_requirement"])
+    return source
 
 
 def audit_tracked_files() -> None:
@@ -76,7 +108,7 @@ def verify() -> None:
         project = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]
         # Old locks contain the previously released component. Remove ONLY self;
         # the newly built wheel must be the component exercised by this checkout.
-        source = (ROOT / CONFIG["requirements"]).read_text()
+        source = effective_requirements((ROOT / CONFIG["requirements"]).read_text())
         blocks = re.split(r"(?=^[A-Za-z0-9])", source, flags=re.M)
         own_name = re.sub(r"[-_.]+", "-", project["name"]).lower()
         filtered = "".join(block for block in blocks if not (

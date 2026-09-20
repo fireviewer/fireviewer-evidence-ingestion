@@ -58,3 +58,11 @@ Ce dépôt fait partie du premier lot de huit composants FIRE-VIEWER ouvert au p
 Cette ouverture porte sur le code, son historique et les artefacts de développement déjà associés au dépôt. Les services déployés, comptes, données, corpus, modèles, secrets et autorisations des ressources externes gardent leur propre périmètre. Les sources des sites, du backend, des applications Android et de l’infrastructure restent privées. La visibilité publique ne constitue ni une nouvelle recette fonctionnelle ni un acte de cession des droits.
 
 [Inventaire et périmètre d’ouverture](https://github.com/fireviewer/Fireviewer_doc/blob/main/docs/public/OPEN_SOURCE.md).
+
+## Compatibilité des contrats Bonsaï / Jev
+
+La chaîne courante utilise `fireviewer-contracts==0.1.2`. La CI et les images
+construisent les dépendances liées depuis les commits immuables de `ci.json`,
+puis vérifient les hashes des wheels produites. Les règles métier de ce composant
+ne changent pas. Les expériences textuelles Jev sont documentées séparément :
+https://github.com/fireviewer/fireviewer-jev-experiments
