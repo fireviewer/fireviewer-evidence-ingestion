@@ -14,5 +14,5 @@ Les dépendances Python nouvelles sont des wheels versionnés dans `vendor/`, av
 SHA-256 et origine dans `ci.json`. Les dépendances inchangées peuvent conserver leur release de
 référence. Aucun artefact déjà publié n'est remplacé. Les builds utilisent les outils verrouillés et
 `SOURCE_DATE_EPOCH` déclaré dans `ci.json` ; les wheels construits sont testés en installation isolée,
-y compris `uv pip check`. Les branches `codex/incident-revisions-*` déclenchent les contrôles CI.
+y compris `uv pip check`.
 Les commandes Python nécessitent Python 3.13. Un push de branche n'est ni une release ni un déploiement.

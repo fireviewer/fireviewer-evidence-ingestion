@@ -1,7 +1,7 @@
 name: ci
 on:
   push:
-    branches: [main, 'codex/integrate-restructure-*', 'codex/incident-revisions-*']
+    branches: [main, 'codex/integrate-restructure-*']
     tags: ['v*']
   pull_request:
   workflow_dispatch:
