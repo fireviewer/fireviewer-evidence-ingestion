@@ -3,40 +3,25 @@
   "requirements": "requirements.ci.lock.txt",
   "dependencies": [
     {
-      "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-final-de937f55844d",
-      "asset": "fireviewer_contracts-0.1.1-py3-none-any.whl",
-      "sha256": "6e50fa64c1f062dfc256c88f1c8c1b2307e0960ebbed1d47a5755708087ccb51",
+      "path": "vendor/fireviewer_contracts-0.1.3-py3-none-any.whl",
+      "asset": "fireviewer_contracts-0.1.3-py3-none-any.whl",
+      "sha256": "80e7d2ce1521ec649179a0ca23ba6f59b0cc957ec72f325c2a996f174717bdd6",
       "upstream_repository": "fireviewer/fireviewer-contracts",
-      "attribution": "Original licence and author notices inside artifact",
-      "source_commit": "d2be4ba408812286a30c9c6207d29ef00bd25ced",
-      "source_asset": "fireviewer_contracts-0.1.2-py3-none-any.whl",
-      "previous_requirement": "fireviewer-contracts==0.1.1",
-      "source_requirement": "fireviewer-contracts==0.1.2"
+      "attribution": "Original licence and author notices inside artifact"
     },
     {
-      "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-final-de937f55844d",
-      "asset": "fireviewer_geolocation-0.1.1-py3-none-any.whl",
-      "sha256": "2a6a4661207f8e06472df32f2659693f0abf28ce756f7955b9804bd8731d1362",
+      "path": "vendor/fireviewer_geolocation-0.1.2-py3-none-any.whl",
+      "asset": "fireviewer_geolocation-0.1.2-py3-none-any.whl",
+      "sha256": "18537f866b48394e6a6a214848c2e22afb87d2d6b1614d2facdae3d327c26b79",
       "upstream_repository": "fireviewer/fireviewer-geolocation",
-      "attribution": "Original licence and author notices inside artifact",
-      "source_commit": "fa4b5294ca60cd42039f3eff9c364b01f16cf2ae",
-      "source_asset": "fireviewer_geolocation-0.1.1-py3-none-any.whl",
-      "previous_requirement": "fireviewer-geolocation==0.1.1",
-      "source_requirement": "fireviewer-geolocation==0.1.1"
+      "attribution": "Original licence and author notices inside artifact"
     },
     {
-      "repository": "fireviewer/fireviewer-evidence-ingestion",
-      "release": "ci-dependencies-final-de937f55844d",
-      "asset": "fireviewer_vision_runtime-0.1.1-py3-none-any.whl",
-      "sha256": "8191b10ad17450edb5a06e215d8717fd2da83f8ca51de028b255142b0522e158",
+      "path": "vendor/fireviewer_vision_runtime-0.1.2-py3-none-any.whl",
+      "asset": "fireviewer_vision_runtime-0.1.2-py3-none-any.whl",
+      "sha256": "bf0c8030a4d48c4f6afce370fb459ef190839c89fee9228f84b4ed9d3d85caf2",
       "upstream_repository": "fireviewer/fireviewer-vision-runtime",
-      "attribution": "Original licence and author notices inside artifact",
-      "source_commit": "9238c4cd9dd57e2addacb12b582ae10194887e59",
-      "source_asset": "fireviewer_vision_runtime-0.1.1-py3-none-any.whl",
-      "previous_requirement": "fireviewer-vision-runtime==0.1.1",
-      "source_requirement": "fireviewer-vision-runtime==0.1.1"
+      "attribution": "Original licence and author notices inside artifact"
     }
   ],
   "tests": [
@@ -47,5 +32,6 @@
   "producer_ui": false,
   "limits": [
     "CPU/offline code qualification only; no models, GPU, deployed services or native Unreal qualification."
-  ]
+  ],
+  "source_date_epoch": 1790121600
 }

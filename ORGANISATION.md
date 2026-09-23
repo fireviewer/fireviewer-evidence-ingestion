@@ -16,7 +16,7 @@ Avant un commit : vérifier `git rev-parse --show-toplevel`, `git remote -v`, `g
 
 ## Reprendre la vérification
 
-Version de package déclarée dans les sources : **0.1.1**. Les tags et artefacts reçus restent immuables ; cette actualisation documentaire ne publie aucune nouvelle version applicative.
+Version de package déclarée dans les sources : **0.1.2**. Version candidate de la migration par révisions. Les tags et artefacts reçus restent immuables ; un commit de cette branche ne déploie pas le service.
 
 ```text
 python tools/ci.py verify

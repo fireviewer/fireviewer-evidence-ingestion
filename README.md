@@ -66,3 +66,7 @@ construisent les dépendances liées depuis les commits immuables de `ci.json`,
 puis vérifient les hashes des wheels produites. Les règles métier de ce composant
 ne changent pas. Les expériences textuelles Jev sont documentées séparément :
 https://github.com/fireviewer/fireviewer-jev-experiments
+
+## Migration par révisions d’incident
+
+La version candidate 0.1.2 aligne les dépendances sur les contrats 0.1.3. Les algorithmes et modèles de ce composant ne changent pas. Les wheels requis sont versionnés dans `vendor/`, vérifiés par SHA-256 dans `ci.json` et utilisés par `python tools/ci.py verify` sans dépôt voisin. Aucun modèle ou corpus n’est incorporé.
